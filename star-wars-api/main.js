@@ -1,9 +1,12 @@
 import { films } from './data/films.js'
+import { people } from './data/people.js'
 
-console.log(films[0])
+//console.log(people.length)
 
-const main_title = document.querySelector('.main_title')
+//console.log(films[0])
 
-console.log(main_title)
 
-main_title.
+people.forEach(person => {
+    let newParagraph = document.body.appendChild(document.createElement('p'))
+    newParagraph.textContent = person.name
+})
