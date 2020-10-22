@@ -70,8 +70,6 @@ body {
     grid-gap: 1rem;
     width: 100%;
     max-width: 1280px;
-    height: 100%;
-    max-height: 1000px;
     margin: 0 auto;
     margin-bottom: 6rem;
   }
@@ -80,10 +78,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    justify-self: center;
   }
  
   .project-title {
     font-size: x-large;
+    text-align: center;
   }
  
   a {
@@ -92,7 +92,9 @@ body {
   }
  
   a img {
-    border-radius: 5%;
+    width: 300px;
+    height: 300px;
+    border-radius: 2%;
   }
  
   .contact-section {
