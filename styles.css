@@ -78,12 +78,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      justify-self: center;
     }
    
     .project-title {
       font-size: x-large;
-      text-align: center;
     }
    
     a {
@@ -92,8 +90,7 @@
     }
    
     a img {
-      height: 300px;
-    border-radius: 2%;
+      border-radius: 5%;
     }
    
     .contact-section {
