@@ -24,7 +24,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: -moz-element("pictures\hyperdrive.jpeg");
+    background-image: url("https://i.ibb.co/8XsW3ct/EV-4uB.gif");
 }
 
 figure {
