@@ -25,7 +25,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     background-color: black;
-    padding-top: 100px;
 }
 
 figure {
