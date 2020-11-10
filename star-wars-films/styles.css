@@ -11,6 +11,7 @@
     background-color: black;
     box-shadow: 0 2px 0 cadetblue(0, 0, 0, 0.4);
     position: fixed;
+    display: block;
 }
 main {
     display: flex;
