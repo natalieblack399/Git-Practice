@@ -1,6 +1,9 @@
 import { people } from '../data/people.js'
+import { removeChildren, getLastNumber } from '../utils/index.js'
 
 const mainContent = document.querySelector('#main')
+
+populateDOM(people)
 
 const mainHeader = document.createElement('header')
 mainHeader.className = 'mainHeader'
@@ -23,7 +26,11 @@ const maleCharacters = people.filter((person) => person.gender === 'male')
 const femaleCharacters = people.filter((person) => person.gender === 'female')
 
 const otherCharacters = people.filter((thing) => {
-    if (thing.gender === 'n/a') {
+    if (
+        thing.gender === 'n/a' || 
+        thing.gender === 'none' ||
+        thing.gender === 'hermaphrodite'
+        ) {
         return thing
     }
 })
@@ -31,6 +38,8 @@ const otherCharacters = people.filter((thing) => {
 maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
 femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
+
+otherButton.addEventListener('click', () => populateDOM(otherCharacters))
 
 function populateDOM(characters) {
     removeChildren(mainContent)
@@ -52,18 +61,3 @@ function populateDOM(characters) {
 
 // let theUrl = "https://swapi.co/api/people/2/"
 // let theUrl2 = "https://swapi.co/api/people/12/"
-
-function getLastNumber(url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-    if (url.charAt(start) === '/') {
-        start++
-    }
-    return url.slice(start, end)
-}
-
-function removeChildren(container) {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-      }
-}
