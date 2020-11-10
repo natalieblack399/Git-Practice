@@ -5,14 +5,23 @@
     color: whitesmoke;
 }
 
-.main_title {
+#main_title {
     display: flex;
     justify-content: center;
     background-color: black;
-    box-shadow: 0 2px 0 cadetblue(0, 0, 0, 0.4);
+    box-shadow: 0 2px 0 cadetblue (0, 0, 0, 0.4);
     position: fixed;
-    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
+
+.mainl {
+    display: block;
+    padding: 2rem;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
