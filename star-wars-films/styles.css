@@ -24,6 +24,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: black;
+    margin-top: 20px;
 }
 
 figure {
