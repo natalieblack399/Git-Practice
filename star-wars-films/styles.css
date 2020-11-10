@@ -23,6 +23,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 200px;
     background-image: url("https://i.ibb.co/3Bz8Yym/image.png");
     background-size: contain;
 }
