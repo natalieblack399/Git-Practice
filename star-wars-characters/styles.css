@@ -1,21 +1,7 @@
 * {
     margin: (20px, 0px, 20px, 0px);
     box-sizing: border-box;
-    background-color: black;
     color: whitesmoke;
-}
-
-#headbox {
-    display: block;
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    box-shadow: 0 2px 0 rgba(95,158,160,1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
 }
 
 .main_title {
@@ -33,6 +19,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-top: 200px;
+    background-image: url("https://i.ibb.co/3Bz8Yym/image.png");
+    background-size: contain;
 }
 
 figure {
