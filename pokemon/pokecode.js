@@ -32,3 +32,4 @@ function populatePokeCard(pokemon) {
     pokemonGrid.appendChild(cardFront)
 }
 
+loadPage()
