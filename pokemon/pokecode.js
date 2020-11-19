@@ -22,7 +22,29 @@ function loadPage() {
 }
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('button')
 
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.disabled = true
+})
+
+mudsDaleButton.addEventListener('click', () => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
+        (async (data) => {
+            let mudMoves = document.createElement('ul')
+            data.moves.forEach(move => {
+                console.log(move.move.name)
+                let moveItem = document.createElement('li')
+                moveItem.textContent = move.move.name
+                mudMoves.appendChild(moveItem)
+            })
+            let mudImage = document.createElement('img')
+            mudImage.src = `../images/pokemon/750.png`
+            pokemonGrid.appendChild(mudMoves)
+            pokemonGrid.appendChild(mudImage)
+    })
+})
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
@@ -67,5 +89,3 @@ function getImageFileName(pokemon) {
         return `0${pokemon.id}`
     }
 }
-
-loadPage()
