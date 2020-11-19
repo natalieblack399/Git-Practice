@@ -22,7 +22,6 @@ function loadPage() {
 }
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
-const mudsDaleButton = document.querySelector('button')
 
 
 function populatePokeCard(pokemon) {
