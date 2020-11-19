@@ -26,7 +26,7 @@ const loadButton = document.querySelector('button')
 
 loadButton.addEventListener('click', () => {
     loadPage()
-    loadButton.disabled = hide
+    loadButton.disabled = true
 })
 
 mudsDaleButton.addEventListener('click', () => {
