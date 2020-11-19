@@ -24,12 +24,6 @@ function loadPage() {
 const pokemonGrid = document.querySelector('.pokemonGrid')
 const mudsDaleButton = document.querySelector('button')
 
-mudsDaleButton.addEventListener('click', () => {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
-        (async (data) => {
-        
-    })
-})
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
