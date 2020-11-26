@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.pokemonGrid {
+.starGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
