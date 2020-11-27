@@ -34,11 +34,11 @@
   }
 
   .card__face--front {
-    background: red;
+    background: black;
   }
   
   .card__face--back {
-    background: blue;
+    background: lightskyblue;
     transform: rotateY(180deg);
   }
 
