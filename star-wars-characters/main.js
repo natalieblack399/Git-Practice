@@ -41,6 +41,11 @@ femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
 otherButton.addEventListener('click', () => populateDOM(otherCharacters))
 
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
+
 function populateDOM(characters) {
     removeChildren(mainContent)
     characters.forEach((element) => {

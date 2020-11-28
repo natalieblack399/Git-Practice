@@ -1,91 +1,63 @@
-// Reusable async function to fetch data from the provided url
-async function getAPIData(url) {
-    try {
-        const response = await fetch(url)
-        const data = await response.json()
-        return data
-    } catch (error) {
-        console.error(error)
+import { people } from '../data/people.js'
+import { removeChildren, getLastNumber } from '../utils/index.js'
+
+const mainContent = document.querySelector('#main')
+
+populateDOM(people)
+
+const mainHeader = document.createElement('header')
+mainHeader.className = 'mainHeader'
+document.body.insertBefore(mainHeader, mainContent)
+
+const maleButton = document.createElement('button')
+maleButton.textContent = 'Male Characters'
+mainHeader.appendChild(maleButton)
+
+const femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+mainHeader.appendChild(femaleButton)
+
+const otherButton = document.createElement('button')
+otherButton.textContent = 'Other Characters'
+mainHeader.appendChild(otherButton)
+
+const maleCharacters = people.filter((person) => person.gender === 'male')
+
+const femaleCharacters = people.filter((person) => person.gender === 'female')
+
+const otherCharacters = people.filter((thing) => {
+    if (
+        thing.gender === 'n/a' || 
+        thing.gender === 'none' ||
+        thing.gender === 'hermaphrodite'
+        ) {
+        return thing
     }
-}
-
-// now, use the async getAPIData function
-function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
-        (async (data) => {
-            for (const pokemon of data.results) {
-                await getAPIData(pokemon.url).then((pokeData) => {
-                    populatePokeCard(pokeData)
-                })
-            }
-        })
-}
-
-const pokemonGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('button')
-
-loadButton.addEventListener('click', () => {
-    loadPage()
-    loadButton.disabled = true
 })
 
-mudsDaleButton.addEventListener('click', () => {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
-        (async (data) => {
-            let mudMoves = document.createElement('ul')
-            data.moves.forEach(move => {
-                console.log(move.move.name)
-                let moveItem = document.createElement('li')
-                moveItem.textContent = move.move.name
-                mudMoves.appendChild(moveItem)
-            })
-            let mudImage = document.createElement('img')
-            mudImage.src = `../images/pokemon/750.png`
-            pokemonGrid.appendChild(mudMoves)
-            pokemonGrid.appendChild(mudImage)
-    })
-})
+maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
-function populatePokeCard(pokemon) {
-    let pokeScene = document.createElement('div')
-    pokeScene.className = 'scene'
-    let pokeCard = document.createElement('div')
-    pokeCard.className = 'card'
-    pokeCard.addEventListener('click', () => {
-        pokeCard.classList.toggle('is-flipped')
-    })
+femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
+
+otherButton.addEventListener('click', () => populateDOM(otherCharacters))
+
+function populateDOM(characters) {
+    removeChildren(mainContent)
+    characters.forEach((element) => {
+        const charFigure = document.createElement('figure')
+        const charImg = document.createElement('img')
+        let charNum = getLastNumber(element.url)
+        charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+        charImg.addEventListener('error', () => charImg.hidden = true) // genius level
+        const charCaption = document.createElement('figcaption')
+        charCaption.textContent = element.name
     
-    pokeCard.appendChild(populateCardFront(pokemon))
-    pokeCard.appendChild(populateCardBack(pokemon))
-    pokeScene.appendChild(pokeCard)
-    pokemonGrid.appendChild(pokeScene)
+        charFigure.appendChild(charImg)
+        charFigure.appendChild(charCaption)
+    
+        mainContent.appendChild(charFigure)
+    })
 }
 
-function populateCardFront(pokemon) {
-    let cardFront = document.createElement('div')
-    cardFront.className = `card__face card__face--front`
-    let frontLabel = document.createElement('p')
-    let frontImage = document.createElement('img')
-    frontLabel.textContent = pokemon.name
-    frontImage.src = `../images/pokemon/${getImageFileName(pokemon)}.png`
-    cardFront.appendChild(frontImage)
-    cardFront.appendChild(frontLabel)
-    return cardFront
-}
-
-function populateCardBack(pokemon) {
-    let cardBack = document.createElement('div')
-    cardBack.className = 'card__face card__face--back'
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `I'm the back of the card`
-    cardBack.appendChild(backLabel)
-    return cardBack
-}
-
-function getImageFileName(pokemon) {
-    if (pokemon.id < 10) {
-        return `00${pokemon.id}`
-    } else if (pokemon.id > 9 && pokemon.id < 99) {
-        return `0${pokemon.id}`
-    }
-}
+// let theUrl = "https://swapi.co/api/people/2/"
+// let theUrl2 = "https://swapi.co/api/people/12/"
