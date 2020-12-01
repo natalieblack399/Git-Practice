@@ -11,7 +11,7 @@ async function getAPIData(url) {
 
 // now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -29,7 +29,7 @@ loadButton.addEventListener('click', () => {
     loadButton.disabled = true
 })
 
-mudsDaleButton.addEventListener('click', () => {
+/* mudsDaleButton.addEventListener('click', () => {
     getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
         (async (data) => {
             let mudMoves = document.createElement('ul')
@@ -44,7 +44,7 @@ mudsDaleButton.addEventListener('click', () => {
             pokemonGrid.appendChild(mudMoves)
             pokemonGrid.appendChild(mudImage)
     })
-})
+}) */
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
@@ -76,10 +76,41 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `I'm the back of the card`
+    let backLabel = document.createElement('h3')
+    backLabel.textContent = `Abilities:`
+    let abilityList = document.createElement('ul')
+    pokemon.abilities.forEach(ability => {
+        let abilityName = document.createElement('li')
+        abilityName.textContent = ability.ability.name
+        abilityList.appendChild(abilityName)
+    })
+    let movesLabel = document.createElement('h3')
+    movesLabel.textContent = 'Most Accurate Move:'
+    let moveAccuracy = document.createElement('h4')
+    const mostAccurateMove = getBestAccuracy(pokemon.moves)
+    //console.log(mostAccurateMove.move)
+    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
+    cardBack.appendChild(abilityList)
+    cardBack.appendChild(movesLabel)
+    cardBack.appendChild(moveAccuracy)
     return cardBack
+}
+
+function getBestAccuracy(pokemoves) {
+    return pokemoves.reduce((mostAccurate, move) => {
+        getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
+        (async (data) => {
+            let mudMoves = document.createElement('ul')
+            data.moves.forEach(move => {
+                console.log(move.move.name)
+                let moveItem = document.createElement('li')
+                moveItem.textContent = move.move.name
+                mudMoves.appendChild(moveItem)
+            })
+        console.log(move)
+        return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
+      }, {});
 }
 
 function getImageFileName(pokemon) {
@@ -89,3 +120,14 @@ function getImageFileName(pokemon) {
         return `0${pokemon.id}`
     }
 }
+
+function Pokemon(name, height, weight, abilities) {
+    this.name = name
+    this.height = height
+    this.weight = weight
+    this.abilities = abilities
+    this.id = 900
+}
+
+let thoremon = new Pokemon('Thoremon', 450, 200, ['gorge', 'sleep', 'cough'])
+console.log(thoremon)
