@@ -89,7 +89,7 @@ function populateCardBack(pokemon) {
     let moveAccuracy = document.createElement('h4')
     const mostAccurateMove = getBestAccuracy(pokemon.moves)
     //console.log(mostAccurateMove.move)
-    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
+    //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
@@ -99,17 +99,11 @@ function populateCardBack(pokemon) {
 
 function getBestAccuracy(pokemoves) {
     return pokemoves.reduce((mostAccurate, move) => {
-        getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
-        (async (data) => {
-            let mudMoves = document.createElement('ul')
-            data.moves.forEach(move => {
-                console.log(move.move.name)
-                let moveItem = document.createElement('li')
-                moveItem.textContent = move.move.name
-                mudMoves.appendChild(moveItem)
+        getAPIData(move.url).then
+            (async (data) => {
+                console.log(data)
             })
-        console.log(move)
-        return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
+    //    return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
       }, {});
 }
 
