@@ -11,7 +11,7 @@ async function getAPIData(url) {
 
 // now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=30`).then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -23,10 +23,16 @@ function loadPage() {
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
 const loadButton = document.querySelector('button')
+const newButton = document.querySelector('#newPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
     loadButton.disabled = true
+})
+
+newButton.addEventListener('click', () => {
+  let pokeName = prompt("What's your new Pokemon's name?");
+  populatePokeCard(createNewPokemon(pokeName))
 })
 
 /* mudsDaleButton.addEventListener('click', () => {
@@ -85,15 +91,18 @@ function populateCardBack(pokemon) {
         abilityList.appendChild(abilityName)
     })
     let movesLabel = document.createElement('h3')
-    movesLabel.textContent = 'Most Accurate Move:'
+    movesLabel.textContent = 'Stats:'
     let moveAccuracy = document.createElement('h4')
-    const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
+    let pokeWeight = document.createElement('h5')
+    pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
+    //const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
     //console.log(mostAccurateMove.move)
     //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
     cardBack.appendChild(moveAccuracy)
+    cardBack.appendChild(pokeWeight)
     return cardBack
 }
 
@@ -116,13 +125,15 @@ function getImageFileName(pokemon) {
     }
 }
 
-function Pokemon(name, height, weight, abilities) {
+function Pokemon(name, height, weight, abilities, moves) {
     this.name = name
     this.height = height
     this.weight = weight
     this.abilities = abilities
     this.id = 900
+    this.moves = moves
 }
 
-let thoremon = new Pokemon('Thoremon', 450, 200, ['gorge', 'sleep', 'cough'])
-console.log(thoremon)
+function createNewPokemon(name) {
+  return new Pokemon(name, 450, 200, ['gorge', 'sleep', 'cough'], ['thunder', 'toxic puke'])
+}

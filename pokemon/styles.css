@@ -34,7 +34,11 @@
 }
 
 .card__face--front {
-  background: red;
+  background: #cb2323;
+  background-image: url(images/background.png);
+  border-radius: .8rem;
+  border: solid 3px #ffcb05;
+  
 }
 
 .card__face--back {
@@ -44,5 +48,5 @@
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(540deg);
 }
