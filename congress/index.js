@@ -14,7 +14,7 @@ function populateSenatorDiv(simpleSenators) {
       if (senator.party === 'R') partyIcon.className = 'fas fa-republican'
       if (senator.party === 'D') partyIcon.className = 'fas fa-democrat'
       if (senator.party === 'ID') partyIcon.className = 'fas fa-star'
-      //figImg.src = senator.imgURL
+      figImg.src = senator.imgURL
       figCaption.textContent = senator.name
 
       figCaption.appendChild(partyIcon)
@@ -43,4 +43,4 @@ function getSimplifiedSenators(senatorArray) {
 }
 
 // by default on page load, we show all senators unsorted
-populateSenatorDiv(senators) //getSimplifiedSenators(senators))
+populateSenatorDiv(getSimplifiedSenators(senators))
