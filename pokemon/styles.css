@@ -36,7 +36,7 @@
 .card__face--front {
   background-image: url(images/background.png);
   border-radius: .8rem;
-  border: solid 3px #ffcb05;
+  border: solid 10px #ffcb05;
   
 }
 
