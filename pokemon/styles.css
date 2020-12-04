@@ -34,11 +34,11 @@
 }
 
 .card__face--front {
-  background-image: url(images/background.png);
+  background-image: url(images/Untitled-2.jpg);
   background-color: #cb2323;
   border-radius: .8rem;
   border: solid 15px #ffcb05;
-  
+  im
 }
 
 .card__face--back {
