@@ -34,7 +34,6 @@
 }
 
 .card__face--front {
-  background-color: #cb2323;
   background: linear-gradient(rgba(0, 0, 255, 0.5));
   border-radius: .8rem;
   border: solid 8px #ffcb05;
