@@ -4,4 +4,3 @@
  
 Here is my [LCRG site](www.rosemarykirk.com).
 ### Hello World
-
