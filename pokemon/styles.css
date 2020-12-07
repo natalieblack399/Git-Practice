@@ -13,7 +13,6 @@
 .scene {
   width: 200px;
   height: 260px;
-  border: 1px solid #CCC;
   margin: 10px;
   perspective: 600px;
 }
