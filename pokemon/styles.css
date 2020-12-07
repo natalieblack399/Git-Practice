@@ -34,14 +34,15 @@
 }
 
 .card__face--front {
-  background-color: #cb2323;
+  background-color: #ffcb05;
   background: linear-gradient(rgba(0, 0, 255, 0.5));
   border-radius: .8rem;
   border: solid 8px #ffcb05;
 }
 
 .card__face--back {
-  background: #444;
+  background-color:#cb2323;
+  background: linear-gradient(rgba(0, 0, 255, 0.5));
   color: #eee;
   transform: rotateY(180deg);
 }
