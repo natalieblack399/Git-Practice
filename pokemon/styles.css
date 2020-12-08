@@ -4,6 +4,11 @@
   background-color: #2c4f9d;
 }
 
+.title {
+    text-align: center;
+    flex: auto;
+}
+
 .pokemonGrid {
   display: flex;
   flex-wrap: wrap;
