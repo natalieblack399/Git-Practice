@@ -6,7 +6,12 @@
 
 .title {
     text-align: center;
-    flex: auto;
+}
+
+.button {
+   border-radius: .6rem;
+   background: #ffcb05;
+   border: solid 1px #272421;
 }
 
 .pokemonGrid {
