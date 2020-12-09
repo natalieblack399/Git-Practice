@@ -43,7 +43,7 @@
   backface-visibility: hidden;
 }
 
-.card__face--front {
+.card__face--front a:hover {
   background-color: #cb2323 ;
   background: linear-gradient(rgba(0, 0, 255, 0.5));
   border-radius: .8rem;
@@ -51,7 +51,7 @@
 }
 
 .card__face--back {
-  background: #cb2323;
+  background: #164ad6;
   color: #eee;
   border-radius: .8rem;
   transform: rotateY(180deg);
