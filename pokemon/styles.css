@@ -43,9 +43,12 @@
   backface-visibility: hidden;
 }
 
-.card__face--front a:hover {
+.card__face--front {
   background-color: #cb2323 ;
   background: linear-gradient(rgba(0, 0, 255, 0.5));
+  margin: -8px;
+  text-align: center;
+  color: #164ad6;
   border-radius: .8rem;
   border: solid 8px #ffcb05;
 }
