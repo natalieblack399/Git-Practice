@@ -57,7 +57,8 @@
 .card__face--back {
   background: #164ad6;
   color: #eee;
-  margin: 1rem;
+  margin: 10px;
+  padding: 10px;
   border-radius: .8rem;
   transform: rotateY(180deg);
 }
