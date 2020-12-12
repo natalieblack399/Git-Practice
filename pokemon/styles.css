@@ -7,6 +7,8 @@
 .title {
     text-align: center;
     color:  #2456cb;
+    display: black;
+    background-color: #cb2323;
 }
 
 .button {
