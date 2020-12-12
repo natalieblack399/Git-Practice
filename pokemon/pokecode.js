@@ -25,15 +25,28 @@ const pokemonGrid = document.querySelector('.pokemonGrid')
 const loadButton = document.querySelector('button')
 const newButton = document.querySelector('#newPokemon')
 
-loadButton.addEventListener('click', () => {
-    loadPage()
-    loadButton.disabled = true
-})
 
 newButton.addEventListener('click', () => {
   let pokeName = prompt("What's your new Pokemon's name?");
   populatePokeCard(createNewPokemon(pokeName))
 })
+
+/* mudsDaleButton.addEventListener('click', () => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
+        (async (data) => {
+            let mudMoves = document.createElement('ul')
+            data.moves.forEach(move => {
+                console.log(move.move.name)
+                let moveItem = document.createElement('li')
+                moveItem.textContent = move.move.name
+                mudMoves.appendChild(moveItem)
+            })
+            let mudImage = document.createElement('img')
+            mudImage.src = `../images/pokemon/750.png`
+            pokemonGrid.appendChild(mudMoves)
+            pokemonGrid.appendChild(mudImage)
+    })
+}) */
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
@@ -78,9 +91,9 @@ function populateCardBack(pokemon) {
     let moveAccuracy = document.createElement('h4')
     let pokeWeight = document.createElement('h5')
     pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
-    const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
-    console.log(mostAccurateMove.move)
-    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
+    //const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
+    //console.log(mostAccurateMove.move)
+    //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
@@ -91,11 +104,12 @@ function populateCardBack(pokemon) {
 
 function getBestAccuracyAndPower(pokemoves) {
     return pokemoves.reduce((mostAccurate, move) => {
-        console.log(move.move.url)
+        //console.log(move.move.url)
         getAPIData(move.move.url).then
             (async (data) => {
                 console.log(data.accuracy, data.power)
             })
+    //    return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
       }, {});
 }
 
