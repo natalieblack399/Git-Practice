@@ -6,9 +6,9 @@
 
 .title {
     text-align: center;
-    color:  #304c92;
-    display: black;
-    background-color: #1c2e5b;
+    color:  #14203d;
+    display: block;
+    background-color: #cb2323;
     padding:2rem;
 }
 
@@ -61,7 +61,7 @@
 
 .card__face--back {
   background-color: #cb2323;
-  color: #1c2e5b;
+  color: #14203d;
   margin: 10px;
   padding: 10px;
   border-radius: .8rem;
