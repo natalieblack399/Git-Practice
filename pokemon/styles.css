@@ -47,8 +47,7 @@
 }
 
 .card__face--front {
-  background-color: #cb2323 ;
-  background-image: linear-gradient(rgba(0, 0, 255, 0.5));
+  background-color: #cb2323;
   padding: -8px;
   text-align: center;
   font-size: 1rem ;
