@@ -6,7 +6,7 @@
 
 .title {
     text-align: center;
-    color:  #2456cb;
+    color:  #304c92;
     display: black;
     background-color: #cb2323;
 }
@@ -60,7 +60,7 @@
 
 .card__face--back {
   background-color: #cb2323;
-  color: #2456cb;
+  color: #304c92;
   margin: 10px;
   padding: 10px;
   border-radius: .8rem;
