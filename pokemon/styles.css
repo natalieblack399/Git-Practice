@@ -11,6 +11,7 @@
 .button {
    border-radius: .4rem;
    background: #ffcb05;
+   color: black;
    border: solid 1px #272421;
    width: 10rem;
 }
