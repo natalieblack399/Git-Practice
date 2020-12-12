@@ -8,7 +8,8 @@
     text-align: center;
     color:  #304c92;
     display: black;
-    background-color: #cb2323;
+    background-color: #1c2e5b;
+    padding:2rem;
 }
 
 .button {
@@ -60,7 +61,7 @@
 
 .card__face--back {
   background-color: #cb2323;
-  color: #304c92;
+  color: #1c2e5b;
   margin: 10px;
   padding: 10px;
   border-radius: .8rem;
