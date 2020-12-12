@@ -97,7 +97,7 @@ function populateCardBack(pokemon) {
     pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
     const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
     console.log(mostAccurateMove.move)
-    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
+    //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
