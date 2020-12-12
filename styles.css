@@ -61,7 +61,8 @@ body {
 .projects-section {
     text-align: center;
     padding: 10rem 2rem;
-    background: #9A52A3; 
+    background: #9A52A3;
+    color: #fff; 
 }
  
 .projects-grid {
