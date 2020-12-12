@@ -95,9 +95,9 @@ function populateCardBack(pokemon) {
     let moveAccuracy = document.createElement('h4')
     let pokeWeight = document.createElement('h5')
     pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
-    //const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
-    //console.log(mostAccurateMove.move)
-    //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
+    const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
+    console.log(mostAccurateMove.move)
+    moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)

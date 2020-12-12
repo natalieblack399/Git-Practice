@@ -57,7 +57,7 @@
 }
 
 .card__face--back {
-  background: #164ad6;
+  background-image: url(images/Untitled-2.jpg);
   color: #eee;
   margin: 10px;
   padding: 10px;
