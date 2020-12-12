@@ -1,12 +1,12 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  color:  #2456cb;
   font-family: Impact, fantasy;
 }
 
 .title {
     text-align: center;
+    color:  #2456cb;
 }
 
 .button {
@@ -47,7 +47,7 @@
 }
 
 .card__face--front {
-  background-image: linear-gradient(135deg, #436dcf 0%, #cb2323 10%, #2456cb 90%);
+  background-image: linear-gradient(135deg, #436dcf 10%, #cb2323 10%, #2456cb 80%);
   padding: -8px;
   text-align: center;
   font-size: 1rem ;
@@ -57,7 +57,7 @@
 }
 
 .card__face--back {
-  background-color: ;
+  background-image: url(images/background.png);
   color: #eee;
   margin: 10px;
   padding: 10px;
