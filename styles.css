@@ -18,7 +18,7 @@ body {
 #navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: #5F999B;
+    background-color: #FF784F;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ body {
 }
  
 .nav-list a:hover {
-    background: pink;
+    background: #8564DE;
   }
  
 .nav-list {
