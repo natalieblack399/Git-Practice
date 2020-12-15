@@ -2,14 +2,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
  
 html {
     box-sizing: border-box;
-     /* Set font size for easy rem calculations
-   * default document font size = 16px, 1rem = 16px, 100% = 16px
-   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-  */
   font-size: 62.5%;
     scroll-behavior: smooth;
 }
@@ -21,7 +18,7 @@ body {
 #navbar {
     display: flex;
     justify-content: flex-end;
-    background-color: #6E93F0;
+    background-color: #5F999B;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
