@@ -9,7 +9,7 @@ for (let step = 0; step < 7; step++) {
     let figImg = document.createElement('img')
     figImg.src = `https://starwars-visualguide.com/assets/img/films/${step + 1}.jpg` 
     let figCaption = document.createElement('figcaption')
-    figCaption.textContent = films[step].title
+    figCaption.textContent = films[step + 1].title
 
     figure.appendChild(figImg)
     figure.appendChild(figCaption)
